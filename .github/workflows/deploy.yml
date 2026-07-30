@@ -29,11 +29,16 @@ jobs:
       - name: Fazer o Build (Vite)
         run: npm run build
 
-      - name: Deploy via FTP para Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: /public_html/
+      - name: Deploy via SSH/rsync
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo "=== Testando conectividade SSH ==="
+          ssh-keyscan -p 65002 -T 15 -H 187.124.121.200 >> ~/.ssh/known_hosts && echo "ssh-keyscan OK" || echo "ssh-keyscan falhou (continuando mesmo assim)"
+          echo "=== Iniciando rsync ==="
+          rsync -azv --delete \
+            -e "ssh -p 65002 -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no -o ConnectTimeout=30 -v" \
+            ./dist/ \
+            u537894463@187.124.121.200:/home/u537894463/domains/gruposeday.com.br/public_html/
+          echo "=== Deploy concluido ==="
