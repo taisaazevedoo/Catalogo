@@ -7,6 +7,7 @@ import Companies from '../components/Companies.jsx'
 import Services from '../components/Services.jsx'
 import Segments from '../components/Segments.jsx'
 import ClientsMarquee from '../components/ClientsMarquee.jsx'
+import GrupoSeday from '../components/GrupoSeday.jsx'
 import useReveal from '../hooks/useReveal.js'
 
 const navLinks = [
@@ -39,6 +40,7 @@ export default function Home() {
         <Segments />
         <ClientsMarquee />
       </main>
+      <GrupoSeday />
       <Footer />
     </>
   )

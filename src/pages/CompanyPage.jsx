@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
+import GrupoSeday from '../components/GrupoSeday.jsx'
 import useReveal from '../hooks/useReveal.js'
 
 const navLinks = [
@@ -63,6 +64,7 @@ export default function CompanyPage({
         </section>
       </main>
 
+      <GrupoSeday />
       <Footer linkPrefix="/" />
     </>
   )

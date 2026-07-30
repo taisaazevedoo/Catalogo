@@ -9,11 +9,7 @@ export default function Header({ links }) {
   return (
     <header className="site-header">
       <Link className="brand" to="/" aria-label="Grupo Seday página inicial" onClick={close}>
-        <img className="brand-logo" src="/img/logos/logo escura.webp" alt="Logo Grupo Seday" />
-        <span>
-          <strong>Grupo Seday</strong>
-          <small>Catálogo Virtual</small>
-        </span>
+        <img className="brand-logo" src="/img/logos/grupo.webp" alt="Logo Grupo Seday" />
       </Link>
 
       <button

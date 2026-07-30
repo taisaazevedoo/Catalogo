@@ -17,9 +17,6 @@ export default function Hero() {
           <li><strong>100%</strong><span>foco em soluções</span></li>
         </ul>
       </div>
-      <div className="hero-media">
-        <img className="hero-logo" src="/img/logos/logo escura.webp" alt="Logo Grupo Seday destacada no hero" />
-      </div>
     </section>
   )
 }
