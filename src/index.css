@@ -883,6 +883,11 @@ p {
   margin-inline: auto;
 }
 
+.page-logo {
+  width: min(100%, 320px);
+  margin-inline: auto;
+}
+
 .page-content {
   display: grid;
   gap: 1rem;
@@ -896,6 +901,42 @@ p {
 
 .page-list li {
   margin-bottom: 0.35rem;
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.timeline-item {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1.3rem;
+  text-align: left;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--brand-seday);
+  border-radius: var(--radius);
+  background: #0d0d0d;
+  box-shadow: var(--shadow);
+}
+
+.timeline-year {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--brand-seday);
+}
+
+.timeline-item p {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .timeline-item {
+    grid-template-columns: 140px 1fr;
+    align-items: start;
+    gap: 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {

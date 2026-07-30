@@ -8,17 +8,13 @@ export default function SedayEquipamentos() {
       eyebrow="Seday Equipamentos"
       heading="Entrega de soluções robustas para operação industrial."
       intro="A Seday Equipamentos atua com foco em desempenho, confiabilidade e apoio continuo para clientes que buscam eficiência e segurança."
-      ctaLabel="Solicitar contato"
-      heroImage="/img/seday-equipamentos.svg"
-      heroAlt="Ilustração da Seday Equipamentos"
-      listTitle="O que a empresa oferece"
-      listItems={[
-        'Suporte técnico especializado',
-        'Planejamento e execução de soluções integradas',
-        'Atendimento com foco em disponibilidade e produtividade',
+      logo="/img/logos/seday-logo-gps.svg"
+      logoAlt="Logo Seday Equipamentos"
+      ctas={[
+        { label: 'Fale conosco', to: 'https://wa.me/5531995324129' },
+        { label: 'Conheça nossos equipamentos', to: '/#servicos' },
+        { label: 'Conheça nossa história', to: '/seday-equipamentos/historia' },
       ]}
-      extraTitle="Por que escolher"
-      extraText="Estrutura operacional sólida, equipe qualificada e um olhar estratégico para cada demanda."
     />
   )
 }

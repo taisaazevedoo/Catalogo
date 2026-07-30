@@ -20,8 +20,13 @@ export default function CompanyPage({
   ctaLabel,
   heroImage,
   heroAlt,
+  logo,
+  logoAlt,
+  ctas,
+  listId,
   listTitle,
   listItems,
+  extraId,
   extraTitle,
   extraText,
 }) {
@@ -42,26 +47,56 @@ export default function CompanyPage({
             <h1>{heading}</h1>
             <p>{intro}</p>
             <div className="actions">
-              <Link className="btn btn-primary" to="/#contato">{ctaLabel}</Link>
+              {ctas ? (
+                ctas.map((cta, i) =>
+                  cta.to.startsWith('http') ? (
+                    <a
+                      key={cta.label}
+                      className={`btn ${i === 0 ? 'btn-primary' : 'btn-secondary'}`}
+                      href={cta.to}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {cta.label}
+                    </a>
+                  ) : (
+                    <Link key={cta.label} className={`btn ${i === 0 ? 'btn-primary' : 'btn-secondary'}`} to={cta.to}>
+                      {cta.label}
+                    </Link>
+                  )
+                )
+              ) : (
+                <Link className="btn btn-primary" to="/#contato">{ctaLabel}</Link>
+              )}
             </div>
           </div>
-          <img src={heroImage} alt={heroAlt} />
+          {logo ? (
+            <img className="page-logo" src={logo} alt={logoAlt} />
+          ) : (
+            <img src={heroImage} alt={heroAlt} />
+          )}
         </section>
 
-        <section className="page-content reveal">
-          <article className="info-card">
-            <h2>{listTitle}</h2>
-            <ul className="page-list">
-              {listItems.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-          <article className="info-card">
-            <h2>{extraTitle}</h2>
-            <p>{extraText}</p>
-          </article>
-        </section>
+        {(listItems || extraText) && (
+          <section className="page-content reveal">
+            {listItems && (
+              <article className="info-card" id={listId}>
+                <h2>{listTitle}</h2>
+                <ul className="page-list">
+                  {listItems.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            )}
+            {extraText && (
+              <article className="info-card" id={extraId}>
+                <h2>{extraTitle}</h2>
+                <p>{extraText}</p>
+              </article>
+            )}
+          </section>
+        )}
       </main>
 
       <GrupoSeday />
