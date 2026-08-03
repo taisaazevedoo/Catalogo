@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import { MessageCircle, Mail, MapPin } from 'lucide-react'
 import SedayHeader from '../components/seday/SedayHeader.jsx'
 import SedayFooter from '../components/seday/SedayFooter.jsx'
 import GrupoSeday from '../components/GrupoSeday.jsx'
@@ -87,6 +88,12 @@ export default function SedayHistoria() {
                 >
                   Fale conosco
                 </a>
+                <a
+                  href="mailto:comercial@seday.com.br"
+                  className="border border-sd-outline text-sd-onSurfaceVariant px-6 py-3 font-bold uppercase text-sm hover:border-sd-primary hover:text-white transition-colors"
+                >
+                  Enviar e-mail
+                </a>
               </div>
             </div>
             <img
@@ -146,7 +153,7 @@ export default function SedayHistoria() {
           </section>
 
           <section className="max-w-6xl mx-auto px-6 pb-16">
-            <h2 className="font-black uppercase text-white text-2xl md:text-3xl mb-8 text-center">
+            <h2 className="font-black uppercase text-white text-2xl md:text-3xl mb-8 text-left">
               Uma linha do tempo de conquistas
             </h2>
             <div className="grid gap-4">
@@ -166,14 +173,60 @@ export default function SedayHistoria() {
 
           <section className="max-w-6xl mx-auto px-6 pb-20">
             <article className="border border-sd-outline/40 bg-sd-surface p-6 md:p-8">
-              <h2 className="font-black uppercase text-sd-primary text-xl md:text-2xl mb-3">
+              <h2 className="font-black uppercase text-sd-primary text-xl md:text-2xl mb-6">
                 Contato
               </h2>
-              <ul className="text-sd-onSurfaceVariant text-sm md:text-base space-y-1.5">
-                <li>Joice · (31) 9 8465-7066</li>
-                <li>comercial@seday.com.br</li>
-                <li>@sedayequipamentos</li>
-              </ul>
+              <div className="grid gap-8 md:grid-cols-3">
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 shrink-0 bg-sd-primary flex items-center justify-center">
+                      <MessageCircle className="text-white" size={18} aria-hidden="true" />
+                    </div>
+                    <p className="font-bold uppercase text-white text-xs tracking-wider">
+                      Central de Atendimento
+                    </p>
+                  </div>
+                  <a
+                    href="https://wa.me/5531984657066"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-fit items-center gap-2 bg-sd-primary text-white px-4 py-2 text-sm font-bold hover:opacity-90 transition-opacity"
+                  >
+                    Joice · +55 31 9 8465-7066
+                  </a>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 shrink-0 bg-sd-outline/30 flex items-center justify-center">
+                      <Mail className="text-sd-primary" size={18} aria-hidden="true" />
+                    </div>
+                    <p className="font-bold uppercase text-white text-xs tracking-wider">
+                      E-mail Corporativo
+                    </p>
+                  </div>
+                  <a
+                    href="mailto:comercial@seday.com.br"
+                    className="inline-flex w-fit items-center gap-2 border border-sd-outline text-sd-onSurfaceVariant px-4 py-2 text-sm hover:border-sd-primary hover:text-white transition-colors"
+                  >
+                    comercial@seday.com.br
+                  </a>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 shrink-0 bg-sd-outline/30 flex items-center justify-center">
+                      <MapPin className="text-sd-primary" size={18} aria-hidden="true" />
+                    </div>
+                    <p className="font-bold uppercase text-white text-xs tracking-wider">
+                      Matriz
+                    </p>
+                  </div>
+                  <p className="text-sd-onSurfaceVariant text-sm">
+                    Rodovia BR-040, 22750, Barreira – Conselheiro Lafaiete/MG
+                  </p>
+                </div>
+              </div>
             </article>
           </section>
         </main>

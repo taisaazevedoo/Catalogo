@@ -14,7 +14,7 @@ const IconWrap = ({ href, label, children }) => (
     aria-label={label}
     target="_blank"
     rel="noopener noreferrer"
-    className="w-9 h-9 rounded-full border border-avpx-steel flex items-center justify-center text-avpx-iron hover:text-avpx-yellow hover:border-avpx-yellow transition-colors shrink-0"
+    className="w-9 h-9 rounded-none border border-avpx-steel flex items-center justify-center text-avpx-iron hover:text-avpx-yellow hover:border-avpx-yellow transition-colors shrink-0"
   >
     {children}
   </a>
@@ -25,11 +25,13 @@ export default function AvapexFooter() {
     <footer className="bg-avpx-navy border-t border-avpx-steel font-avpxBody">
       <div className="max-w-6xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-3">
         <div className="flex flex-col gap-5">
-          <img
-            src="/img/logos/logo-avapex-transportes-v2.svg"
-            alt="Avapex Transportes"
-            className="h-11 w-auto object-contain"
-          />
+          <Link to="/avapex-transportes" aria-label="Avapex Transportes — página inicial" className="w-fit">
+            <img
+              src="/img/logos/logo-avapex-transportes-v2.svg"
+              alt="Avapex Transportes"
+              className="h-11 w-auto object-contain"
+            />
+          </Link>
           <div className="flex items-center gap-3">
             <IconWrap href="https://www.instagram.com/avapextransportes/" label="Instagram">
               <Instagram size={16} aria-hidden="true" />
@@ -77,7 +79,7 @@ export default function AvapexFooter() {
       </div>
 
       <div className="bg-avpx-yellow">
-        <p className="max-w-6xl mx-auto px-6 py-3 text-center text-avpx-navy text-xs font-avpxHead font-bold">
+        <p className="max-w-6xl mx-auto px-6 py-3 text-left text-avpx-navy text-xs font-avpxHead font-bold">
           © {new Date().getFullYear()} avapex.com.br — todos os direitos reservados
         </p>
       </div>

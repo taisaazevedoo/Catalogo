@@ -88,6 +88,12 @@ export default function SedayEquipamentos() {
                 >
                   Fale conosco
                 </a>
+                <a
+                  href="mailto:comercial@seday.com.br"
+                  className="border border-sd-outline text-sd-onSurfaceVariant px-6 py-3 font-bold uppercase text-sm hover:border-sd-primary hover:text-white transition-colors"
+                >
+                  Enviar e-mail
+                </a>
                 <Link
                   to="/seday-equipamentos/produtos"
                   className="border border-white text-white px-6 py-3 font-bold uppercase text-sm hover:bg-white hover:text-sd-bg transition-colors"
@@ -102,15 +108,17 @@ export default function SedayEquipamentos() {
                 </Link>
               </div>
             </div>
-            <img
-              className="w-full max-w-md mx-auto"
-              src="/img/logos/seday-logo-gps.svg"
-              alt="Logo Seday Equipamentos"
-            />
+            <Link to="/seday-equipamentos" aria-label="Seday Equipamentos — página inicial" className="block">
+              <img
+                className="w-full max-w-md mx-auto"
+                src="/img/logos/seday-logo-gps.svg"
+                alt="Logo Seday Equipamentos"
+              />
+            </Link>
           </section>
 
           <section className="max-w-6xl mx-auto px-6 pb-16">
-            <h2 className="font-black uppercase text-white text-2xl md:text-3xl mb-8 text-center">
+            <h2 className="font-black uppercase text-white text-2xl md:text-3xl mb-8 text-left">
               Nossos serviços
             </h2>
             <div className="grid md:grid-cols-3 gap-4">
@@ -149,7 +157,7 @@ export default function SedayEquipamentos() {
           </section>
 
           <section className="max-w-6xl mx-auto px-6 pb-20">
-            <h2 className="font-black uppercase text-white text-2xl md:text-3xl mb-4 text-center">
+            <h2 className="font-black uppercase text-white text-2xl md:text-3xl mb-4 text-left">
               Redes sociais
             </h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">

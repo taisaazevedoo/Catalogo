@@ -17,7 +17,7 @@ export default function AvapexProdutos() {
         <AvapexHeader />
 
         <main className="max-w-6xl mx-auto px-6 py-16">
-          <span className="inline-block mb-4 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-avpxHead font-bold uppercase tracking-widest">
+          <span className="inline-block mb-4 px-3 py-1 rounded-none bg-white/10 text-white text-xs font-avpxHead font-bold uppercase tracking-widest">
             Produtos
           </span>
           <h1 className="font-avpxHead font-extrabold uppercase text-white text-3xl md:text-4xl mb-3">

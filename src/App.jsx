@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import SedayEquipamentos from './pages/SedayEquipamentos.jsx'
@@ -17,10 +17,21 @@ export default function App() {
   const location = useLocation()
 
   useEffect(() => {
-    if (!location.hash) return
-    const element = document.querySelector(location.hash)
-    if (element) element.scrollIntoView({ behavior: 'smooth' })
-  }, [location])
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+  }, [])
+
+  useLayoutEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+        return
+      }
+    }
+    window.scrollTo(0, 0)
+  }, [location.pathname, location.hash])
 
   return (
     <Routes>

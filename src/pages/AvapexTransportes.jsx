@@ -68,7 +68,7 @@ export default function AvapexTransportes() {
         <main>
           <section className="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block mb-4 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-avpxHead font-bold uppercase tracking-widest">
+              <span className="inline-block mb-4 px-3 py-1 rounded-none bg-white/10 text-white text-xs font-avpxHead font-bold uppercase tracking-widest">
                 Avapex Transportes
               </span>
               <h1 className="font-avpxHead font-extrabold uppercase text-white text-4xl md:text-5xl leading-[0.95] mb-4">
@@ -89,6 +89,12 @@ export default function AvapexTransportes() {
                 >
                   Fale conosco
                 </a>
+                <a
+                  href="mailto:comercial@avapex.com.br"
+                  className="border border-avpx-steel text-avpx-iron px-6 py-3 font-avpxHead font-bold uppercase text-sm hover:border-avpx-yellow hover:text-white transition-colors"
+                >
+                  Enviar e-mail
+                </a>
                 <Link
                   to="/avapex-transportes/produtos"
                   className="border border-white text-white px-6 py-3 font-avpxHead font-bold uppercase text-sm hover:bg-white hover:text-avpx-navy transition-colors"
@@ -103,15 +109,17 @@ export default function AvapexTransportes() {
                 </Link>
               </div>
             </div>
-            <img
-              className="w-full max-w-md mx-auto"
-              src="/img/logos/logo-avapex-transportes-v2.svg"
-              alt="Logo Avapex Transportes"
-            />
+            <Link to="/avapex-transportes" aria-label="Avapex Transportes — página inicial" className="block">
+              <img
+                className="w-full max-w-md mx-auto"
+                src="/img/logos/logo-avapex-transportes-v2.svg"
+                alt="Logo Avapex Transportes"
+              />
+            </Link>
           </section>
 
           <section className="max-w-6xl mx-auto px-6 pb-16">
-            <h2 className="font-avpxHead font-bold uppercase text-white text-2xl md:text-3xl mb-8 text-center">
+            <h2 className="font-avpxHead font-bold uppercase text-white text-2xl md:text-3xl mb-8 text-left">
               Nossos serviços
             </h2>
             <div className="grid md:grid-cols-3 gap-4">
@@ -152,7 +160,7 @@ export default function AvapexTransportes() {
           </section>
 
           <section className="max-w-6xl mx-auto px-6 pb-20">
-            <h2 className="font-avpxHead font-bold uppercase text-white text-2xl md:text-3xl mb-4 text-center">
+            <h2 className="font-avpxHead font-bold uppercase text-white text-2xl md:text-3xl mb-4 text-left">
               Redes sociais
             </h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
