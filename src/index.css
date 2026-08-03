@@ -177,9 +177,9 @@ section {
   justify-items: center;
   position: relative;
   overflow: hidden;
-  border-radius: 1.5rem;
+  width: 100%;
   padding: 4rem 2rem;
-  margin: 1rem auto 0;
+  margin: 0;
   min-height: 78vh;
   isolation: isolate;
 }
@@ -187,7 +187,9 @@ section {
 .hero-copy {
   text-align: center;
   max-width: 720px;
+  width: min(100%, calc(720px + 2rem));
   margin-inline: auto;
+  padding-inline: 1rem;
 }
 
 .hero::before {
@@ -352,12 +354,17 @@ p {
 .services-heading h2 {
   font-size: clamp(1.1rem, 2vw, 1.5rem);
   line-height: 1.1;
-  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .services-heading h2 {
+    white-space: nowrap;
+  }
 }
 
 .services-gallery {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -966,6 +973,10 @@ p {
 
   .gallery-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .services-gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .page-hero {

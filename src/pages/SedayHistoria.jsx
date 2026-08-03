@@ -1,15 +1,8 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import Header from '../components/Header.jsx'
-import Footer from '../components/Footer.jsx'
+import SedayHeader from '../components/seday/SedayHeader.jsx'
+import SedayFooter from '../components/seday/SedayFooter.jsx'
 import GrupoSeday from '../components/GrupoSeday.jsx'
-import useReveal from '../hooks/useReveal.js'
-
-const navLinks = [
-  { href: '/#sobre', label: 'Sobre' },
-  { href: '/#empresas', label: 'Empresas' },
-  { href: '/#contato', label: 'Contato' },
-]
 
 const timeline = [
   {
@@ -51,8 +44,6 @@ const timeline = [
 ]
 
 export default function SedayHistoria() {
-  useReveal()
-
   return (
     <>
       <Helmet>
@@ -62,84 +53,134 @@ export default function SedayHistoria() {
           content="Conheça a trajetória de 27 anos da Seday Transportes, desde a fundação em Ouro Branco/MG até os grandes contratos atuais."
         />
       </Helmet>
-      <Header links={navLinks} />
 
-      <main className="section-shell">
-        <section className="page-hero reveal">
-          <div>
-            <span className="eyebrow">Nossa História</span>
-            <h1>27 anos de estrada, competência e credibilidade.</h1>
-            <p>
-              A Seday Transportes completa 27 anos de estrada, período marcado pela parceria
-              formada com grandes empresas e composta de sinceridade, eficiência e pontualidade.
-              Fundada em 1999 na cidade de Ouro Branco/MG, a empresa atua no ramo de locação e
-              prestação de serviço com máquinas e equipamentos, além do transporte de pesados.
-            </p>
-            <div className="actions">
-              <Link className="btn btn-primary" to="/seday-equipamentos">Conhecer a empresa</Link>
-              <a
-                className="btn btn-secondary"
-                href="https://wa.me/5531995324129"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Fale conosco
-              </a>
+      <div className="bg-sd-bg font-sd">
+        <SedayHeader />
+
+        <main>
+          <section className="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block mb-4 px-3 py-1 bg-sd-primary/20 text-sd-primary text-xs font-bold uppercase tracking-widest">
+                Nossa história
+              </span>
+              <h1 className="font-black uppercase text-white text-4xl md:text-5xl leading-[0.95] mb-4">
+                27 anos de estrada, competência e credibilidade.
+              </h1>
+              <p className="text-sd-onSurfaceVariant text-base md:text-lg mb-8">
+                A Seday Transportes completa 27 anos de estrada, período marcado pela parceria
+                formada com grandes empresas e composta de sinceridade, eficiência e pontualidade.
+                Fundada em 1999 na cidade de Ouro Branco/MG, a empresa atua no ramo de locação e
+                prestação de serviço com máquinas e equipamentos, além do transporte de pesados.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  to="/seday-equipamentos"
+                  className="bg-sd-primary text-white px-6 py-3 font-bold uppercase text-sm hover:opacity-90 transition-opacity"
+                >
+                  Conhecer a empresa
+                </Link>
+                <a
+                  href="https://wa.me/5531995324129"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-white text-white px-6 py-3 font-bold uppercase text-sm hover:bg-white hover:text-sd-bg transition-colors"
+                >
+                  Fale conosco
+                </a>
+              </div>
             </div>
-          </div>
-          <img className="page-logo" src="/img/logos/seday-logo-gps.svg" alt="Logo Seday Equipamentos" />
-        </section>
+            <img
+              className="w-full max-w-md mx-auto"
+              src="/img/logos/seday-logo-gps.svg"
+              alt="Logo Seday Equipamentos"
+            />
+          </section>
 
-        <section className="page-content reveal">
-          <article className="info-card">
-            <h2>Quem somos</h2>
-            <p>
-              Com atuação significativa neste segmento, a Seday Transportes atende siderúrgicas,
-              mineradoras, construtoras e empresas terceiras, locando máquinas e equipamentos e
-              realizando o transporte de seus produtos e subprodutos, em harmonia com o meio
-              ambiente, conquistando o respeito e a confiança de seus stakeholders.
-            </p>
-            <p>
-              A Seday destaca-se por suprir de forma inteligente e eficaz as mais diversas
-              necessidades relacionadas a logística, transporte e movimentação de carga, agregando
-              valor e eficiência aos processos de seus clientes.
-            </p>
-            <p>
-              Dotado de profissionais capacitados e comprometidos com o bom atendimento, a Seday
-              vem construindo ao longo desses 27 anos, junto de seus colaboradores e clientes, uma
-              história alicerçada em competência e credibilidade.
-            </p>
-          </article>
-        </section>
-
-        <section className="section-heading reveal">
-          <span className="eyebrow">Trajetória</span>
-          <h2>Uma linha do tempo de conquistas.</h2>
-        </section>
-
-        <section className="timeline reveal">
-          {timeline.map((item) => (
-            <article className="timeline-item" key={item.year}>
-              <span className="timeline-year">{item.year}</span>
-              <p>{item.text}</p>
+          <section className="max-w-6xl mx-auto px-6 pb-16">
+            <article className="border border-sd-outline/40 bg-sd-surface p-6 md:p-8">
+              <h2 className="font-black uppercase text-sd-primary text-xl md:text-2xl mb-3">
+                Quem somos
+              </h2>
+              <p className="text-sd-onSurfaceVariant text-sm md:text-base mb-3">
+                Com atuação significativa neste segmento, a Seday Transportes atende siderúrgicas,
+                mineradoras, construtoras e empresas terceiras, locando máquinas e equipamentos e
+                realizando o transporte de seus produtos e subprodutos, em harmonia com o meio
+                ambiente, conquistando o respeito e a confiança de seus stakeholders.
+              </p>
+              <p className="text-sd-onSurfaceVariant text-sm md:text-base mb-3">
+                A Seday destaca-se por suprir de forma inteligente e eficaz as mais diversas
+                necessidades relacionadas a logística, transporte e movimentação de carga, agregando
+                valor e eficiência aos processos de seus clientes.
+              </p>
+              <p className="text-sd-onSurfaceVariant text-sm md:text-base">
+                Dotado de profissionais capacitados e comprometidos com o bom atendimento, a Seday
+                vem construindo ao longo desses 27 anos, junto de seus colaboradores e clientes, uma
+                história alicerçada em competência e credibilidade.
+              </p>
             </article>
-          ))}
-        </section>
+          </section>
 
-        <section className="page-content reveal">
-          <article className="info-card">
-            <h2>Contato</h2>
-            <ul className="page-list">
-              <li>Joice · (31) 9 8465-7066</li>
-              <li>comercial@seday.com.br</li>
-              <li>@sedayequipamentos</li>
-            </ul>
-          </article>
-        </section>
-      </main>
+          <section className="max-w-6xl mx-auto px-6 pb-16 grid md:grid-cols-2 gap-8 items-start">
+            <div>
+              <h2 className="font-black uppercase text-white text-2xl md:text-3xl mb-4">
+                Nossa localização
+              </h2>
+              <p className="text-sd-onSurfaceVariant text-sm md:text-base">
+                Com o objetivo de otimizar suas operações logísticas, a Seday está estrategicamente
+                localizada com sua matriz em Conselheiro Lafaiete/MG, às margens da BR-040, um posto
+                avançado em Belo Horizonte/MG, e filiais nos estados de São Paulo e Rio de Janeiro.
+                Além de contar com unidades de apoio em Juatuba/MG, Paraopeba/MG e Ipatinga/MG.
+              </p>
+            </div>
+            <div className="h-64 md:h-72 border border-sd-outline/40 overflow-hidden">
+              <iframe
+                className="w-full h-full"
+                title="Mapa de localização da Seday Equipamentos"
+                src="https://maps.google.com/maps?q=Rodovia%20BR040,%2022750,%20Barreira%20-%20Conselheiro%20Lafaiete%20/%20MG&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin"
+                style={{ border: 0 }}
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </section>
 
-      <GrupoSeday />
-      <Footer linkPrefix="/" />
+          <section className="max-w-6xl mx-auto px-6 pb-16">
+            <h2 className="font-black uppercase text-white text-2xl md:text-3xl mb-8 text-center">
+              Uma linha do tempo de conquistas
+            </h2>
+            <div className="grid gap-4">
+              {timeline.map((item) => (
+                <article
+                  key={item.year}
+                  className="border border-sd-outline/40 border-l-4 border-l-sd-primary bg-sd-surface p-5 md:p-6 md:grid md:grid-cols-[140px_1fr] md:gap-6"
+                >
+                  <span className="block font-black text-sd-primary text-lg mb-1 md:mb-0">
+                    {item.year}
+                  </span>
+                  <p className="text-sd-onSurfaceVariant text-sm md:text-base m-0">{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="max-w-6xl mx-auto px-6 pb-20">
+            <article className="border border-sd-outline/40 bg-sd-surface p-6 md:p-8">
+              <h2 className="font-black uppercase text-sd-primary text-xl md:text-2xl mb-3">
+                Contato
+              </h2>
+              <ul className="text-sd-onSurfaceVariant text-sm md:text-base space-y-1.5">
+                <li>Joice · (31) 9 8465-7066</li>
+                <li>comercial@seday.com.br</li>
+                <li>@sedayequipamentos</li>
+              </ul>
+            </article>
+          </section>
+        </main>
+
+        <GrupoSeday />
+        <SedayFooter />
+      </div>
     </>
   )
 }

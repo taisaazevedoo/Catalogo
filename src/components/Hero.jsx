@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="hero section-shell reveal">
+    <section className="hero reveal">
       <div className="hero-copy">
         <span className="eyebrow">Inovação, mobilidade e eficiência operacional</span>
         <h1>
