@@ -31,7 +31,7 @@ export default function Home() {
           content="Catálogo virtual do Grupo Seday com informações sobre Seday Equipamentos, Avapex Transportes e Innomach."
         />
       </Helmet>
-      <Header links={navLinks} />
+      <Header links={navLinks} transparentOnTop />
       <main>
         <Hero />
         <About />

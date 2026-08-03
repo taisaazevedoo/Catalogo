@@ -7,11 +7,14 @@ export default function Segments() {
         <span className="eyebrow">Segmentos atendidos</span>
         <h2>Atendimento recorrente para setores que exigem alta performance.</h2>
       </div>
-      <div className="chips">
+      <ul className="segments-list">
         {segments.map((segment) => (
-          <span key={segment}>{segment}</span>
+          <li key={segment}>
+            <span className="segments-diamond" aria-hidden="true"></span>
+            {segment}
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   )
 }

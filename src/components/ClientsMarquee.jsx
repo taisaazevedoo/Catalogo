@@ -36,6 +36,7 @@ export default function ClientsMarquee() {
   return (
     <section id="clientes" className="section-shell reveal marquee-section">
       <div className="section-heading section-heading--centered">
+        <span className="eyebrow">Confiança de mercado</span>
         <h2 className="marquee-title">
           <span>EMPRESAS QUE CONFIAM NO</span>
           <strong>GRUPO SEDAY</strong>

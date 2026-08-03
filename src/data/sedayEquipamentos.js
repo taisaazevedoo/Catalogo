@@ -10,11 +10,14 @@ const nomes = [
   'Carregadeira',
   'Escavadeira',
   'Retro Escavadeira',
-  'Empilhadeira',
+  'Empilhadeira elétrica',
+  'Empilhadeira a combustão',
   'Transpaleteira',
   'Trator de esteira',
   'Trator de pneus',
   'Manipuladores',
+  'Mini Escavadeira',
+  'Caminhonete 4x4 com carroceria',
 ]
 
 const slugify = (nome) =>

@@ -23,8 +23,11 @@ export default function SedayProdutos() {
           <h1 className="font-black uppercase text-white text-3xl md:text-4xl mb-3">
             Nossa frota de equipamentos
           </h1>
-          <p className="text-sd-onSurfaceVariant mb-10 max-w-2xl">
+          <p className="text-sd-onSurfaceVariant mb-2 max-w-2xl">
             Selecione um equipamento para ver fotos e, quando disponível, o vídeo de apresentação.
+          </p>
+          <p className="text-sd-onSurfaceVariant mb-10 max-w-2xl">
+            Implementamos de acordo com a sua necessidade.
           </p>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">

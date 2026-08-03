@@ -7,8 +7,9 @@ const figures = [
 
 export default function Services() {
   return (
-    <section id="servicos" className="section-shell reveal">
-      <div className="section-heading services-heading">
+    <section id="servicos" className="services-shell reveal">
+      <div className="services-heading-v2">
+        <span className="eyebrow">Onde atuamos</span>
         <h2>A ESCOLHA IDEAL PARA A SUA OPERAÇÃO</h2>
       </div>
       <div className="services-gallery">
